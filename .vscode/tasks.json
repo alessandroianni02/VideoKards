@@ -1,0 +1,41 @@
+{
+    //  tasks.json
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Task:  Apri  Terminali  di  Controllo",
+            "type": "shell",
+            "command": "echo  'Task:  Apri  Terminali  di  Controllo'",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "dependsOn": [
+                "BE",
+                "FE"
+            ]
+        },
+        {
+            "label": "BE",
+            "type": "shell",
+            "command": "mvn  spring-boot:run",
+            "options": {
+                "cwd": "videokardsBE"
+            },
+            "presentation": {
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "FE",
+            "type": "shell",
+            "command": "ng  serve",
+            "options": {
+                "cwd": "videokardsFE"
+            },
+            "presentation": {
+                "panel": "dedicated"
+            }
+        }
+    ]
+}
